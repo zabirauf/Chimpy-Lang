@@ -39,6 +39,9 @@
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="lang\ChimpyObject.cs" />
     <Compile Include="lang\ChimpyClass.cs" />
+    <Compile Include="lang\ChimpyRuntime.cs" />
+    <Compile Include="lang\Method.cs" />
+    <Compile Include="lang\ChimpyException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

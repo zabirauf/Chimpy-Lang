@@ -175,7 +175,7 @@ namespace ChimpyLang
 		/// <c>true</c> if the specified <see cref="System.Object"/> is equal to the current
 		/// <see cref="ChimpyLang.ChimpyClass"/>; otherwise, <c>false</c>.
 		/// </returns>
-		public bool Equals(object other)
+		public override bool Equals(object other)
 		{
 			if (other == this) return true;
 			if ( !(other.GetType().IsAssignableFrom(this.GetType)) ) return false;

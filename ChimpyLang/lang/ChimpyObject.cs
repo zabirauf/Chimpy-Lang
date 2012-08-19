@@ -105,9 +105,9 @@ namespace ChimpyLang
 			return value;
 		}
 
-		public Int32 AsInteger()
+		public Int32? AsInteger()
 		{
-			Int32 value = this as Int32;
+			Int32? value = this as Int32?;
 			if(value == null)
 				throw new TypeError("Int32",this);
 			return value;
