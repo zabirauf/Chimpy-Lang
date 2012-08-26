@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
-
+using Antlr.Runtime;
 namespace ChimpyLang
 {
 	public class ChimpyObject
 	{
 		private ChimpyClass _chimpyClass;
 		private Dictionary<string,ChimpyObject> _instanceVariables;
-
+	 	
 		public ChimpyObject (ChimpyClass chimpyClass)
 		{
 			this._chimpyClass=chimpyClass;
@@ -75,22 +75,22 @@ namespace ChimpyLang
 			return Call (method,new ChimpyObject[0]);
 		}
 
-		public bool IsTrue()
+		public virtual bool IsTrue()
 		{
 			return !IsFalse();
 		}
 
-		public bool IsFalse()
+		public virtual bool IsFalse()
 		{
 			return false;
 		}
 
-		public bool IsNil()
+		public virtual bool IsNil()
 		{
 			return false;
 		}
 
-		public Object ToJavaObject()
+		public virtual Object ToJavaObject()
 		{
 			return this;
 

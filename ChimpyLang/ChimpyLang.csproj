@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -42,10 +42,28 @@
     <Compile Include="lang\ChimpyRuntime.cs" />
     <Compile Include="lang\Method.cs" />
     <Compile Include="lang\ChimpyException.cs" />
+    <Compile Include="lang\ValueObject.cs" />
+    <Compile Include="lang\TypeError.cs" />
+    <Compile Include="lang\OperatorMethod.cs" />
+    <Compile Include="lang\InterpretedMethod.cs" />
+    <Compile Include="lang\Context.cs" />
+    <Compile Include="lang\MethodNotFound.cs" />
+    <Compile Include="lang\IEvaluable.cs" />
+    <Compile Include="lang\ExceptionHandler.cs" />
+    <Compile Include="lang\ChimpyLexer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="lang\" />
     <Folder Include="lang\nodes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Antlr3.Runtime.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Downloads\antlr-dotnet-source-3.4.1.9004\antlr\antlr3-main\runtime\CSharp3\Sources\Antlr3.Runtime\Antlr3.Runtime.csproj">
+      <Project>{8FDC0A87-9005-4D5A-AB75-E55CEB575559}</Project>
+      <Name>Antlr3.Runtime</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

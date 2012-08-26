@@ -27,7 +27,7 @@ namespace ChimpyLang
 			this.runtimeClass = ChimpyRuntime.GetExceptionClass();
 		}
 
-		public ChimpyException(Exception inner):base(inner)
+		public ChimpyException(Exception inner):base("",inner)
 		{
 			SetRuntimeClass(inner.GetType().ToString());
 		}

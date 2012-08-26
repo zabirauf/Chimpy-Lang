@@ -13,7 +13,7 @@ namespace ChimpyLang
 		/// <param name='arguments'>
 		/// Arguments passed to the method
 		/// </param>
-		public abstract ChimpyObject call(ChimpyObject receiver, ChimpyObject [] arguments);
+		public abstract ChimpyObject Call(ChimpyObject receiver, ChimpyObject [] arguments);
 	}
 }
 
