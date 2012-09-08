@@ -51,6 +51,19 @@
     <Compile Include="lang\IEvaluable.cs" />
     <Compile Include="lang\ExceptionHandler.cs" />
     <Compile Include="lang\ChimpyLexer.cs" />
+    <Compile Include="lang\ChimpyParser.cs" />
+    <Compile Include="lang\nodes\Node.cs" />
+    <Compile Include="lang\nodes\IfNode.cs" />
+    <Compile Include="lang\nodes\AndNode.cs" />
+    <Compile Include="lang\nodes\OrNode.cs" />
+    <Compile Include="lang\nodes\NotNode.cs" />
+    <Compile Include="lang\nodes\ConstantNode.cs" />
+    <Compile Include="lang\nodes\InstanceVariableAssignNode.cs" />
+    <Compile Include="lang\nodes\InstanceVariableNode.cs" />
+    <Compile Include="lang\nodes\LiteralNode.cs" />
+    <Compile Include="lang\nodes\LocalAssignNode.cs" />
+    <Compile Include="lang\nodes\SelfNode.cs" />
+    <Compile Include="lang\nodes\WhileNode.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -15,9 +15,6 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Antlr3.Runtime" expanded="True">
-            <Node name="References" expanded="True" />
-          </Node>
           <Node name="ChimpyLang" expanded="True">
             <Node name="lang" expanded="True">
               <Node name="ChimpyLexer.cs" selected="True" />

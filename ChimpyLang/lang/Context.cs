@@ -97,7 +97,11 @@ namespace ChimpyLang
 		{
 			try
 			{
-
+				ChimpyLexer lexer = new ChimpyLexer(new Antlr.Runtime.ANTLRReaderStream(reader) );
+				ChimpyParser parser = new ChimpyParser(new Antlr.Runtime.CommonTokenStream(lexer));
+				Node node = parser.parse();
+				if(node == null) return ChimpyRuntime.Nil;
+				return node.Eval(this);
 			}
 			catch (ChimpyException e)
 			{
