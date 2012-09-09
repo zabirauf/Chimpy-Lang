@@ -39,19 +39,22 @@ namespace ChimpyLang
 			}
 		}
 
-		public Context(ChimpyObject currentSelf, ChimpyClass currentClass)
+        public Context(ChimpyObject currentSelf, ChimpyClass currentClass)
+            : this(currentSelf, currentClass, null)
 		{
-			this(currentSelf,currentClass,null);
+			
 		}
 
 		public Context(ChimpyObject currentSelf)
+            :this(currentSelf,currentSelf.chimpyClass)
 		{
-			this(currentSelf,currentSelf.chimpyClass);
+			
 		}
 
-		public Context()
+        public Context()
+            : this(ChimpyRuntime.MainObject)
 		{
-			this(ChimpyRuntime.MainObject);
+			
 		}
 
 		public ChimpyObject CurrentSelf

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4.1.9004 ./ChimpyLang/lang/ChimpyParser.g 2012-09-09 01:20:59
+// $ANTLR 3.4.1.9004 ./ChimpyLang/lang/ChimpyParser.g 2012-09-09 19:29:19
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -20,6 +20,7 @@
 #pragma warning disable 3019
 
 
+  using ChimpyLang;
   //import java.util.ArrayList;
 
 
@@ -328,7 +329,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 			DebugLocation(63, 23);
 			if (state.backtracking == 0)
 			{
-				 retval.nodes.add((head!=null?head.node:default(Node))); 
+				 retval.nodes.Add((head!=null?head.node:default(Node))); 
 			}
 			DebugLocation(64, 5);
 			// ./ChimpyLang/lang/ChimpyParser.g:64:5: ( terminator tail= expression )*
@@ -368,7 +369,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 					DebugLocation(65, 23);
 					if (state.backtracking == 0)
 					{
-						 retval.nodes.add((tail!=null?tail.node:default(Node))); 
+						 retval.nodes.Add((tail!=null?tail.node:default(Node))); 
 					}
 
 					}
@@ -4033,7 +4034,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 				DebugLocation(139, 23);
 				if (state.backtracking == 0)
 				{
-					 retval.node = new LiteralNode(new ValueObject((STRING22!=null?STRING22.Text:null).substring(1, (STRING22!=null?STRING22.Text:null).length() - 1))); 
+					 retval.node = new LiteralNode(new ValueObject((STRING22!=null?STRING22.Text:null).Substring(1, (STRING22!=null?STRING22.Text:null).Length - 1))); 
 				}
 
 				}
@@ -4053,7 +4054,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 				DebugLocation(140, 23);
 				if (state.backtracking == 0)
 				{
-					 retval.node = new LiteralNode(new ValueObject(new Integer((INTEGER23!=null?INTEGER23.Text:null)))); 
+					 retval.node = new LiteralNode(new ValueObject(int.Parse((INTEGER23!=null?INTEGER23.Text:null)))); 
 				}
 
 				}
@@ -4073,7 +4074,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 				DebugLocation(141, 23);
 				if (state.backtracking == 0)
 				{
-					 retval.node = new LiteralNode(new ValueObject(new Float((FLOAT24!=null?FLOAT24.Text:null)))); 
+					 retval.node = new LiteralNode(new ValueObject(float.Parse((FLOAT24!=null?FLOAT24.Text:null)))); 
 				}
 
 				}
@@ -4093,7 +4094,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 				DebugLocation(142, 23);
 				if (state.backtracking == 0)
 				{
-					 retval.node = new LiteralNode(ChimpyRuntime.getNil()); 
+					 retval.node = new LiteralNode(ChimpyRuntime.Nil); 
 				}
 
 				}
@@ -4113,7 +4114,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 				DebugLocation(143, 23);
 				if (state.backtracking == 0)
 				{
-					 retval.node = new LiteralNode(ChimpyRuntime.getTrue()); 
+					 retval.node = new LiteralNode(ChimpyRuntime.True); 
 				}
 
 				}
@@ -4133,7 +4134,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 				DebugLocation(144, 23);
 				if (state.backtracking == 0)
 				{
-					 retval.node = new LiteralNode(ChimpyRuntime.getFalse()); 
+					 retval.node = new LiteralNode(ChimpyRuntime.False); 
 				}
 
 				}
@@ -4507,7 +4508,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 					DebugLocation(164, 37);
 					if (state.backtracking == 0)
 					{
-						 ((CallNode)(head!=null?head.node:default(CallNode))).setReceiver(retval.node); retval.node = (head!=null?head.node:default(CallNode)); 
+						 ((CallNode)(head!=null?head.node:default(CallNode))).Receiver=retval.node; retval.node = (head!=null?head.node:default(CallNode)); 
 					}
 
 					}
@@ -4532,7 +4533,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 			DebugLocation(166, 37);
 			if (state.backtracking == 0)
 			{
-				 ((CallNode)(tail!=null?tail.node:default(CallNode))).setReceiver(retval.node); retval.node = (tail!=null?tail.node:default(CallNode)); 
+				 ((CallNode)(tail!=null?tail.node:default(CallNode))).Receiver=retval.node; retval.node = (tail!=null?tail.node:default(CallNode)); 
 			}
 
 			}
@@ -4702,7 +4703,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 				DebugLocation(172, 37);
 				if (state.backtracking == 0)
 				{
-					 retval.node = new CallNode((NAME38!=null?NAME38.Text:null), new ArrayList<Node>()); 
+					 retval.node = new CallNode((NAME38!=null?NAME38.Text:null), new List<Node>()); 
 				}
 
 				}
@@ -4740,7 +4741,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 				DebugLocation(175, 37);
 				if (state.backtracking == 0)
 				{
-					 retval.node = new CallNode((NAME41!=null?NAME41.Text:null), (arguments43!=null?arguments43.nodes:default(ArrayList<Node>))); 
+					 retval.node = new CallNode((NAME41!=null?NAME41.Text:null), (arguments43!=null?arguments43.nodes:default(List<Node>))); 
 				}
 
 				}
@@ -4774,7 +4775,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 
 	private sealed partial class arguments_return : AstParserRuleReturnScope<object, IToken>
 	{
-		public ArrayList<Node> nodes;
+		public List<Node> nodes;
 		public arguments_return(ChimpyParser grammar) {OnCreated(grammar);}
 		partial void OnCreated(ChimpyParser grammar);
 	}
@@ -4782,7 +4783,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 	partial void EnterRule_arguments();
 	partial void LeaveRule_arguments();
 	// $ANTLR start "arguments"
-	// ./ChimpyLang/lang/ChimpyParser.g:179:1: arguments returns [ArrayList<Node> nodes] :head= expression ( COMMA tail= expression )* ;
+	// ./ChimpyLang/lang/ChimpyParser.g:179:1: arguments returns [List<Node> nodes] :head= expression ( COMMA tail= expression )* ;
 	[GrammarRule("arguments")]
 	private ChimpyParser.arguments_return arguments()
 	{
@@ -4803,7 +4804,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 		DebugLocation(179, 2);
 		try
 		{
-			// ./ChimpyLang/lang/ChimpyParser.g:179:42: (head= expression ( COMMA tail= expression )* )
+			// ./ChimpyLang/lang/ChimpyParser.g:179:37: (head= expression ( COMMA tail= expression )* )
 			DebugEnterAlt(1);
 			// ./ChimpyLang/lang/ChimpyParser.g:180:37: head= expression ( COMMA tail= expression )*
 			{
@@ -4812,7 +4813,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 			DebugLocation(180, 37);
 			if (state.backtracking == 0)
 			{
-				 retval.nodes = new ArrayList<Node>(); 
+				 retval.nodes = new List<Node>(); 
 			}
 			DebugLocation(181, 9);
 			PushFollow(Follow._expression_in_arguments1350);
@@ -4823,7 +4824,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 			DebugLocation(181, 37);
 			if (state.backtracking == 0)
 			{
-				 retval.nodes.add((head!=null?head.node:default(Node))); 
+				 retval.nodes.Add((head!=null?head.node:default(Node))); 
 			}
 			DebugLocation(182, 5);
 			// ./ChimpyLang/lang/ChimpyParser.g:182:5: ( COMMA tail= expression )*
@@ -4862,7 +4863,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 					DebugLocation(183, 37);
 					if (state.backtracking == 0)
 					{
-						 retval.nodes.add((tail!=null?tail.node:default(Node))); 
+						 retval.nodes.Add((tail!=null?tail.node:default(Node))); 
 					}
 
 					}
@@ -5332,7 +5333,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 			DebugLocation(202, 37);
 			if (state.backtracking == 0)
 			{
-				 retval.node = new MethodDefinitionNode((NAME58!=null?NAME58.Text:null), (parameters60!=null?parameters60.names:default(ArrayList<String>)), (expressions63!=null?expressions63.nodes:default(Nodes))); 
+				 retval.node = new MethodDefinitionNode((NAME58!=null?NAME58.Text:null), (parameters60!=null?parameters60.names:default(List<string>)), (expressions63!=null?expressions63.nodes:default(Nodes))); 
 			}
 
 			}
@@ -5364,7 +5365,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 
 	private sealed partial class parameters_return : AstParserRuleReturnScope<object, IToken>
 	{
-		public ArrayList<String> names;
+		public List<string> names;
 		public parameters_return(ChimpyParser grammar) {OnCreated(grammar);}
 		partial void OnCreated(ChimpyParser grammar);
 	}
@@ -5372,7 +5373,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 	partial void EnterRule_parameters();
 	partial void LeaveRule_parameters();
 	// $ANTLR start "parameters"
-	// ./ChimpyLang/lang/ChimpyParser.g:206:1: parameters returns [ArrayList<String> names] :head= NAME ( COMMA tail= NAME )* ;
+	// ./ChimpyLang/lang/ChimpyParser.g:206:1: parameters returns [List<string> names] :head= NAME ( COMMA tail= NAME )* ;
 	[GrammarRule("parameters")]
 	private ChimpyParser.parameters_return parameters()
 	{
@@ -5395,7 +5396,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 		DebugLocation(206, 2);
 		try
 		{
-			// ./ChimpyLang/lang/ChimpyParser.g:206:45: (head= NAME ( COMMA tail= NAME )* )
+			// ./ChimpyLang/lang/ChimpyParser.g:206:40: (head= NAME ( COMMA tail= NAME )* )
 			DebugEnterAlt(1);
 			// ./ChimpyLang/lang/ChimpyParser.g:207:37: head= NAME ( COMMA tail= NAME )*
 			{
@@ -5404,7 +5405,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 			DebugLocation(207, 37);
 			if (state.backtracking == 0)
 			{
-				 retval.names = new ArrayList<String>(); 
+				 retval.names = new List<string>(); 
 			}
 			DebugLocation(208, 9);
 			head=(IToken)Match(input,NAME,Follow._NAME_in_parameters1658); if (state.failed) return retval;
@@ -5415,7 +5416,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 			DebugLocation(208, 37);
 			if (state.backtracking == 0)
 			{
-				 retval.names.add((head!=null?head.Text:null)); 
+				 retval.names.Add((head!=null?head.Text:null)); 
 			}
 			DebugLocation(209, 5);
 			// ./ChimpyLang/lang/ChimpyParser.g:209:5: ( COMMA tail= NAME )*
@@ -5454,7 +5455,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 					DebugLocation(210, 37);
 					if (state.backtracking == 0)
 					{
-						 retval.names.add((tail!=null?tail.Text:null)); 
+						 retval.names.Add((tail!=null?tail.Text:null)); 
 					}
 
 					}
@@ -6029,7 +6030,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 					DebugLocation(239, 45);
 					if (state.backtracking == 0)
 					{
-						 retval.node.addCatchBlock((CONSTANT82!=null?CONSTANT82.Text:null), (NAME84!=null?NAME84.Text:null), (catchBody!=null?catchBody.nodes:default(Nodes)));  
+						 retval.node.AddCatchBlock((CONSTANT82!=null?CONSTANT82.Text:null), (NAME84!=null?NAME84.Text:null), (catchBody!=null?catchBody.nodes:default(Nodes)));  
 					}
 
 					}

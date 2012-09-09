@@ -12,7 +12,7 @@ options {
 @namespace { ChimpyLang }
 
 @header {
-  using ChimpyLang.lang.nodes;
+  using ChimpyLang;
   //import java.util.ArrayList;
 }
 
@@ -60,9 +60,9 @@ root returns [Nodes nodes]:
 // Collection of nodes, often refered to as a body (methd body, class body, etc.)
 expressions returns [Nodes nodes]:
                       { $nodes = new Nodes(); }
-    head=expression   { $nodes.add($head.node); }
+    head=expression   { $nodes.Add($head.node); }
     (terminator
-     tail=expression  { $nodes.add($tail.node); }
+     tail=expression  { $nodes.Add($tail.node); }
     )*
     terminator?
   ;
@@ -136,12 +136,12 @@ primaryExpression returns [Node node]:
 
 // Any static value
 literal returns [Node node]:
-    STRING            { $node = new LiteralNode(new ValueObject($STRING.text.substring(1, $STRING.text.length() - 1))); }
-  | INTEGER           { $node = new LiteralNode(new ValueObject(new Integer($INTEGER.text))); }
-  | FLOAT             { $node = new LiteralNode(new ValueObject(new Float($FLOAT.text))); }
-  | NIL               { $node = new LiteralNode(ChimpyRuntime.getNil()); }
-  | TRUE              { $node = new LiteralNode(ChimpyRuntime.getTrue()); }
-  | FALSE             { $node = new LiteralNode(ChimpyRuntime.getFalse()); }
+    STRING            { $node = new LiteralNode(new ValueObject($STRING.text.Substring(1, $STRING.text.Length - 1))); }
+  | INTEGER           { $node = new LiteralNode(new ValueObject(int.Parse($INTEGER.text))); }
+  | FLOAT             { $node = new LiteralNode(new ValueObject(float.Parse($FLOAT.text))); }
+  | NIL               { $node = new LiteralNode(ChimpyRuntime.Nil); }
+  | TRUE              { $node = new LiteralNode(ChimpyRuntime.True); }
+  | FALSE             { $node = new LiteralNode(ChimpyRuntime.False); }
   | constant          { $node = $constant.node; }
   | instanceVariable  { $node = $instanceVariable.node; }
   | self              { $node = $self.node; }
@@ -161,26 +161,26 @@ instanceVariable returns [InstanceVariableNode node]:
 call returns [Node node]:
     (literal DOT                    { $node = $literal.node; }
       )?
-    (head=message DOT               { ((CallNode)$head.node).setReceiver($node); $node = $head.node; }
+    (head=message DOT               { ((CallNode)$head.node).Receiver=$node; $node = $head.node; }
       )*
-    tail=message                    { ((CallNode)$tail.node).setReceiver($node); $node = $tail.node; }
+    tail=message                    { ((CallNode)$tail.node).Receiver=$node; $node = $tail.node; }
   ;
 
 // The tail part of a method call: method name + arguments
 message returns [CallNode node]:
     NAME                            { $node = new CallNode($NAME.text); }
-  | NAME OPEN_PARENT CLOSE_PARENT   { $node = new CallNode($NAME.text, new ArrayList<Node>()); }
+  | NAME OPEN_PARENT CLOSE_PARENT   { $node = new CallNode($NAME.text, new List<Node>()); }
   | NAME OPEN_PARENT
            arguments
          CLOSE_PARENT               { $node = new CallNode($NAME.text, $arguments.nodes); }
   ;
 
 // Arguments of a method call.
-arguments returns [ArrayList<Node> nodes]:
-                                    { $nodes = new ArrayList<Node>(); }
-    head=expression                 { $nodes.add($head.node); }
+arguments returns [List<Node> nodes]:
+                                    { $nodes = new List<Node>(); }
+    head=expression                 { $nodes.Add($head.node); }
     (COMMA
-     tail=expression                { $nodes.add($tail.node); }
+     tail=expression                { $nodes.Add($tail.node); }
     )*
   ;
 
@@ -203,11 +203,11 @@ methodDefinition returns [MethodDefinitionNode node]:
   ;
 
 // Parameters in a method definition.
-parameters returns [ArrayList<String> names]:
-                                    { $names = new ArrayList<String>(); }
-    head=NAME                       { $names.add($head.text); }
+parameters returns [List<string> names]:
+                                    { $names = new List<string>(); }
+    head=NAME                       { $names.Add($head.text); }
     (COMMA
-     tail=NAME                      { $names.add($tail.text); }
+     tail=NAME                      { $names.Add($tail.text); }
     )*
   ;
 
@@ -236,7 +236,7 @@ tryBlock returns [TryNode node]:
     TRY terminator
       tryBody=expressions                   { $node = new TryNode($tryBody.nodes); }
     (CATCH CONSTANT COLON NAME terminator
-      catchBody=expressions                 { $node.addCatchBlock($CONSTANT.text, $NAME.text, $catchBody.nodes);  }
+      catchBody=expressions                 { $node.AddCatchBlock($CONSTANT.text, $NAME.text, $catchBody.nodes);  }
     )*
     END
   ;

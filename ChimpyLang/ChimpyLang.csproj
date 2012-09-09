@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -35,6 +35,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="lang\nodes\ConstantAssignNode.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="lang\ChimpyObject.cs" />
@@ -64,12 +65,14 @@
     <Compile Include="lang\nodes\LocalAssignNode.cs" />
     <Compile Include="lang\nodes\SelfNode.cs" />
     <Compile Include="lang\nodes\WhileNode.cs" />
+    <Compile Include="lang\nodes\CallNode.cs" />
+    <Compile Include="lang\nodes\ClassDefinitionNode.cs" />
+    <Compile Include="lang\nodes\MethodDefinitionNode.cs" />
+    <Compile Include="lang\nodes\Nodes.cs" />
+    <Compile Include="lang\nodes\TryNode.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Folder Include="lang\" />
-    <Folder Include="lang\nodes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Antlr3.Runtime.dll" />
   </ItemGroup>

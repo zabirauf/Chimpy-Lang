@@ -14,14 +14,16 @@ namespace ChimpyLang
 			this._instanceVariables=new Dictionary<string,ChimpyObject>();
 		}
 
-		public ChimpyObject(string className)
+        public ChimpyObject(string className)
+            : this(ChimpyRuntime.GetRootClass(className))
 		{
-			this(ChimpyRuntime.GetRootClass(className));
+			
 		}
 
 		public ChimpyObject()
+            :this(ChimpyRuntime.ObjectClass)
 		{
-			this(ChimpyRuntime.ObjectClass);
+			
 
 		}
 

@@ -30,9 +30,10 @@ namespace ChimpyLang
 		/// <param name='name'>
 		/// Name.
 		/// </param>
-		public ChimpyClass(string name)
+        public ChimpyClass(string name)
+            : this(name, ChimpyRuntime.ObjectClass)
 		{
-			this(name,ChimpyRuntime.ObjectClass);
+		    
 		}
 
 		public string Name

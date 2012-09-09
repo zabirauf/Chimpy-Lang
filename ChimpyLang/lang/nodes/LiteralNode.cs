@@ -2,7 +2,7 @@ using System;
 
 namespace ChimpyLang
 {
-	public class LiteralNode
+	public class LiteralNode : Node
 	{
 		ChimpyObject value;
 		public LiteralNode (ChimpyObject value)

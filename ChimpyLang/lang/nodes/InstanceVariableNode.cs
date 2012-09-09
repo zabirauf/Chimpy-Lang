@@ -6,14 +6,14 @@ namespace ChimpyLang
 	{
 		private string name;
 
-		public InstanceVariableNode (string name,Node expression)
+		public InstanceVariableNode (string name)
 		{
 			this.name = name;
 		}
 
 		public ChimpyObject Eval(Context context)
 		{
-			return context.CurrentSelf.GetInstanceVariable(name);
+			return context.CurrentSelf.GetInstanceVariables(name);
 		}
 	}
 }

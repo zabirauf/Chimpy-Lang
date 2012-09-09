@@ -12,8 +12,8 @@ options {
 
   public override IToken NextToken() {
     IToken t = base.NextToken();
-    // DEBUG Uncomment to output tokens
-    // System.out.println("TOKEN> " + t);
+    //DEBUG Uncomment to output tokens
+    Console.Out.Writeline("TOKEN> " + t);
     return t;
   }
   
