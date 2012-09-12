@@ -100,27 +100,28 @@ namespace ChimpyLang
 
 		public string AsString()
 		{
-			string value= this as string;
-			if(value == null)
+            ValueObject valueObject = this as ValueObject;
+			
+			if(valueObject == null)
 				throw new TypeError("string",this);
 
-			return value;
+			return valueObject.GetAsString();
 		}
 
 		public Int32? AsInteger()
 		{
-			Int32? value = this as Int32?;
-			if(value == null)
+            ValueObject valueObject = this as ValueObject;
+			if(valueObject == null)
 				throw new TypeError("Int32",this);
-			return value;
+			return valueObject.GetAsInt();
 		}
 
 		public float? AsFloat()
 		{
-			float? value = this as float?;
-			if(value == null)
+            ValueObject valueObject = this as ValueObject;
+			if(valueObject == null)
 				throw new TypeError("float",this);
-			return value;
+			return valueObject.GetAsFloat();
 		}
 
 	}

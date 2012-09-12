@@ -42,7 +42,7 @@ namespace ChimpyLang
 			}
 		}
 
-		public ChimpyObject Eval(Context context)
+		public override ChimpyObject Eval(Context context)
 		{
 			if(receiver == null && arguments == null && context.HasLocal(method))
 			{

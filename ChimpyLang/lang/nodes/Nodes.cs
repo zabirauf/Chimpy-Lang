@@ -16,7 +16,7 @@ namespace ChimpyLang
 			nodes.Add(n);
 		}
 
-		public ChimpyObject Eval(Context context)
+		public override ChimpyObject Eval(Context context)
 		{
 			ChimpyObject lastEval = ChimpyRuntime.Nil;
 			foreach(Node n in nodes)

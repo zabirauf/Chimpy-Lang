@@ -11,7 +11,7 @@ namespace ChimpyLang
 			this.receiver = receiver;
 		}
 
-		public ChimpyObject Eval(Context context)
+		public override ChimpyObject Eval(Context context)
 		{
 			if(receiver.Eval(context).IsTrue())
 				return ChimpyRuntime.False;

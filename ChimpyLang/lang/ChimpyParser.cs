@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4.1.9004 ./ChimpyLang/lang/ChimpyParser.g 2012-09-09 19:29:19
+// $ANTLR 3.4.1.9004 ./ChimpyLang/lang/ChimpyParser.g 2012-09-12 21:26:21
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -23,7 +23,7 @@
   using ChimpyLang;
   //import java.util.ArrayList;
 
-
+using System;
 using System.Collections.Generic;
 using Antlr.Runtime;
 using Antlr.Runtime.Misc;
@@ -4054,7 +4054,7 @@ public partial class ChimpyParser : Antlr.Runtime.Parser
 				DebugLocation(140, 23);
 				if (state.backtracking == 0)
 				{
-					 retval.node = new LiteralNode(new ValueObject(int.Parse((INTEGER23!=null?INTEGER23.Text:null)))); 
+					 retval.node = new LiteralNode(new ValueObject(Int32.Parse((INTEGER23!=null?INTEGER23.Text:null)))); 
 				}
 
 				}

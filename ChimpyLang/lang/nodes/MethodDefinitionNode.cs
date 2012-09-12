@@ -15,7 +15,7 @@ namespace ChimpyLang
 			this.body = body;
 		}
 
-		public ChimpyObject Eval(Context context)
+		public override ChimpyObject Eval(Context context)
 		{
 			string [] parametersName;
 			if(parameters == null)
@@ -27,7 +27,7 @@ namespace ChimpyLang
 				parametersName = parameters.ToArray();
 			}
 
-			context.CurrentClass.AddMethod(name,new InterpretedMethod(name,parameters,body));
+			context.CurrentClass.AddMethod(name,new InterpretedMethod(name,parametersName,body));
 			return ChimpyRuntime.Nil;
 		}
 	}

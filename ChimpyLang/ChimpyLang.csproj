@@ -35,6 +35,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="lang\ArgumentError.cs" />
     <Compile Include="lang\nodes\ConstantAssignNode.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AssemblyInfo.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="lang\nodes\MethodDefinitionNode.cs" />
     <Compile Include="lang\nodes\Nodes.cs" />
     <Compile Include="lang\nodes\TryNode.cs" />
+    <Compile Include="lang\Bootstrapper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup />

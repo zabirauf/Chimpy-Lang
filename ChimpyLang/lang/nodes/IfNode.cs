@@ -15,7 +15,7 @@ namespace ChimpyLang
 			this.elseBody = elseBody;
 		}
 
-		public ChimpyObject Eval(Context context)
+		public override ChimpyObject Eval(Context context)
 		{
 			if (condition.Eval(context).IsTrue())
 			{

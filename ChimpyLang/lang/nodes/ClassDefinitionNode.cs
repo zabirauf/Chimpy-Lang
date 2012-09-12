@@ -15,7 +15,7 @@ namespace ChimpyLang
 			this.body = body;
 		}
 
-		public ChimpyObject Eval(Context context)
+		public override ChimpyObject Eval(Context context)
 		{
 			ChimpyClass klass;
 			if(superName == null)

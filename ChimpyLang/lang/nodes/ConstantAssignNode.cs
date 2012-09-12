@@ -16,7 +16,7 @@ namespace ChimpyLang
             this.name = name;
         }
 
-        public ChimpyObject Eval(Context context)
+        public override ChimpyObject Eval(Context context)
         {
             ChimpyObject value = expression.Eval(context);
             context.CurrentClass.SetConstant(name, value);

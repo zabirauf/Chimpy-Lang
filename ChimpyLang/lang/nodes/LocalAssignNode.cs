@@ -13,7 +13,7 @@ namespace ChimpyLang
 			this.expression = expression;
 		}
 
-		public ChimpyObject Eval(Context context)
+		public override ChimpyObject Eval(Context context)
 		{
 			ChimpyObject value = expression.Eval(context);
 			context.SetLocal(name,value);

@@ -16,7 +16,7 @@ namespace ChimpyLang
 			this.value=value;
 		}
 
-		public ValueObject(int? value):base("Integer")
+		public ValueObject(Int32? value):base("Integer")
 		{
 			this.value=value;
 		}
@@ -55,6 +55,30 @@ namespace ChimpyLang
 		}
 
 		//TODO: Have to implement GetValueAs
+
+        public string GetAsString()
+        {
+            string value = this.value as string;
+            if (value == null)
+                throw new TypeError("string", this.value);
+            return value;
+        }
+
+        public Int32? GetAsInt()
+        {
+            Int32? value = this.value as Int32?;
+            if (value == null)
+                throw new TypeError("int", this.value);
+            return value;
+        }
+
+        public float? GetAsFloat()
+        {
+            float? value = this.value as float?;
+            if (value == null)
+                throw new TypeError("float", this.value);
+            return value;
+        }
 	}
 }
 

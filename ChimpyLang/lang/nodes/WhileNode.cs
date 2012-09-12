@@ -12,7 +12,7 @@ namespace ChimpyLang
 			this.body = body;
 		}
 
-		public ChimpyObject Eval(Context context)
+		public override ChimpyObject Eval(Context context)
 		{
 			while(condition.Eval(context).IsTrue())
 			{

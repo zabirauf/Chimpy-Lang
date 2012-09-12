@@ -137,7 +137,7 @@ primaryExpression returns [Node node]:
 // Any static value
 literal returns [Node node]:
     STRING            { $node = new LiteralNode(new ValueObject($STRING.text.Substring(1, $STRING.text.Length - 1))); }
-  | INTEGER           { $node = new LiteralNode(new ValueObject(int.Parse($INTEGER.text))); }
+  | INTEGER           { $node = new LiteralNode(new ValueObject(Int32.Parse($INTEGER.text))); }
   | FLOAT             { $node = new LiteralNode(new ValueObject(float.Parse($FLOAT.text))); }
   | NIL               { $node = new LiteralNode(ChimpyRuntime.Nil); }
   | TRUE              { $node = new LiteralNode(ChimpyRuntime.True); }

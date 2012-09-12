@@ -10,7 +10,7 @@ namespace ChimpyLang
 			this.value = value;
 		}
 
-		public ChimpyObject Eval(Context context)
+		public override ChimpyObject Eval(Context context)
 		{
 			return value;
 		}

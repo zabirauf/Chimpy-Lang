@@ -13,7 +13,7 @@ namespace ChimpyLang
 			this.argument = argument;
 		}
 
-		public ChimpyObject Eval(Context context)
+		public override ChimpyObject Eval(Context context)
 		{
 			ChimpyObject receiverEvaled = receiver.Eval(context);
 			if(receiverEvaled.IsTrue())

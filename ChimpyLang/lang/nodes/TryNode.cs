@@ -19,7 +19,7 @@ namespace ChimpyLang
 			catchBlocks.Add(new CatchBlock(typeName,localName,body));
 		}
 
-		public ChimpyObject Eval(Context context)
+		public override ChimpyObject Eval(Context context)
 		{
 			Context tryContext = context.MakeChildContext();
 

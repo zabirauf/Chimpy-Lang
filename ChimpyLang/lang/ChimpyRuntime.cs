@@ -20,6 +20,10 @@ namespace ChimpyLang
 			{
 				return objectClass;
 			}
+			set
+			{
+				objectClass = value;
+			}
 		}
 
 		public static ChimpyObject MainObject
@@ -27,6 +31,11 @@ namespace ChimpyLang
 			get
 			{
 				return mainObject;
+			}
+
+			set
+			{
+				mainObject = value ;
 			}
 		}
 
@@ -36,6 +45,11 @@ namespace ChimpyLang
 			{
 				return nilObject;
 			}
+
+			set
+			{
+				nilObject = value;
+			}
 		}
 
 		public static ChimpyObject True
@@ -44,6 +58,11 @@ namespace ChimpyLang
 			{
 				return trueObject;
 			}
+
+			set
+			{
+				trueObject = value;
+			}
 		}
 
 		public static ChimpyObject False
@@ -51,6 +70,11 @@ namespace ChimpyLang
 			get
 			{
 				return falseObject;
+			}
+
+			set 
+			{
+				falseObject = value;
 			}
 		}
 

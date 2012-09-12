@@ -179,7 +179,7 @@ namespace ChimpyLang
 		public override bool Equals(object other)
 		{
 			if (other == this) return true;
-			if ( !(other.GetType().IsAssignableFrom(this.GetType)) ) return false;
+			if ( !(other.GetType().IsAssignableFrom(this.GetType())) ) return false;
 			return name == ((ChimpyClass)other).Name;
 		}
 
